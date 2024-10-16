@@ -63,7 +63,7 @@ app.delete('/task/:id', async (req, res) => {
     }
 });
 
-if (PerformanceObserverEntryList.env.DEVELOPMENT) {
+if (process.env.DEVELOPMENT) {
     app.listen(port, () => {
         console.log(`Example app listening on port ${port}`)
     });

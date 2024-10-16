@@ -1,9 +1,9 @@
 import { ListTablesCommand, DynamoDBClient } from "@aws-sdk/client-dynamodb";
-import { UpdateCommand, PutCommand, DynamoDBDocmentClient, ScanCommand, DeleteCommand, } from "@aws-sdk/lib-dynamodb";
+import { UpdateCommand, PutCommand, DynamoDBDocumentClient, ScanCommand, DeleteCommand, } from "@aws-sdk/lib-dynamodb";
 import crypto from "crypto";
 
 const client = new DynamoDBClient({ region: "us-west-1" });
-const docClient = new DynamoDBDocmentClient.from(client);
+const docClient = DynamoDBDocumentClient.from(client);
 
 export const fetchTasks = async () => {
     const command = new ScanCommand({
